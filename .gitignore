@@ -25,3 +25,5 @@ dist-ssr
 
 # Large binaries
 public/downloads/*.apk
+
+.npm-cache/
