@@ -4,7 +4,7 @@ import {
   Award, 
   Briefcase
 } from 'lucide-react';
-import { SocialIcon } from 'react-social-icons';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { TEAM_MEMBERS, CONTACT_INFO, type TeamMember } from '../data/websiteData';
 
 export const TeamSection: React.FC = () => {
@@ -64,7 +64,7 @@ export const TeamSection: React.FC = () => {
                   <img
                     src={leader.image}
                     alt={leader.name}
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-top"
                     loading="lazy"
                   />
                 </div>
@@ -105,7 +105,7 @@ export const TeamSection: React.FC = () => {
                       onClick={() => handleConsultWith(leader)}
                       className="inline-flex items-center space-x-2 text-xs font-bold text-white bg-brand-700 hover:bg-brand-800 px-4 py-2.5 rounded-xl transition-all shadow-xs whitespace-nowrap flex-nowrap"
                     >
-                      <SocialIcon network="whatsapp" style={{ width: 20, height: 20 }} />
+                      <WhatsAppIcon className="w-4 h-4 text-emerald-300" />
                       <span className="whitespace-nowrap font-bold">Direct Advisory on WhatsApp</span>
                     </button>
                   </div>
@@ -131,13 +131,13 @@ export const TeamSection: React.FC = () => {
                 className="group bg-white rounded-3xl p-5 border border-slate-200 shadow-2xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  {/* Normal-sized top portrait banner */}
-                  <div className="w-full h-52 sm:h-56 rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-xs relative mb-4">
+                  {/* Normal-proportioned top portrait banner with full headspace */}
+                  <div className="w-full h-64 sm:h-72 rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-xs relative mb-4">
                     {member.image ? (
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-500"
+                        className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500"
                         loading="lazy"
                       />
                     ) : (
@@ -181,9 +181,9 @@ export const TeamSection: React.FC = () => {
                   {member.canInquire ? (
                     <button
                       onClick={() => handleConsultWith(member)}
-                      className="w-full py-2.5 px-3 bg-slate-50 hover:bg-brand-50 text-slate-800 hover:text-brand-800 font-bold text-xs rounded-xl transition-colors border border-slate-200 flex items-center justify-center space-x-2"
+                      className="w-full py-2.5 px-3 bg-slate-50 hover:bg-brand-50 text-slate-800 hover:text-brand-800 font-bold text-xs rounded-xl transition-colors border border-slate-200 flex items-center justify-center space-x-2 group/btn"
                     >
-                      <SocialIcon network="whatsapp" style={{ width: 18, height: 18 }} />
+                      <WhatsAppIcon className="w-4 h-4 text-[#25D366] group-hover/btn:scale-110 transition-transform" />
                       <span>Inquiry from {member.name}</span>
                     </button>
                   ) : (

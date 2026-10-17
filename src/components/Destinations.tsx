@@ -8,7 +8,7 @@ import {
   CheckCircle,
   Filter
 } from 'lucide-react';
-import { SocialIcon } from 'react-social-icons';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { DESTINATIONS, type DestinationCountry, CONTACT_INFO } from '../data/websiteData';
 import { CountryFlag } from './CountryFlag';
 
@@ -237,7 +237,7 @@ export const Destinations: React.FC<DestinationsProps> = () => {
                   onClick={() => handleApplyCountry(country)}
                   className="w-full py-2.5 px-4 bg-brand-700 hover:bg-brand-800 text-white font-bold rounded-xl text-xs sm:text-sm transition-all shadow-xs flex items-center justify-center space-x-2"
                 >
-                  <SocialIcon network="whatsapp" style={{ width: 18, height: 18 }} />
+                  <WhatsAppIcon className="w-4 h-4 text-emerald-300" />
                   <span>Apply for {country.name} on WhatsApp</span>
                 </button>
               </div>

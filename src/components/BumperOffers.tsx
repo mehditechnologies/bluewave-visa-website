@@ -7,7 +7,7 @@ import {
   Briefcase,
   ArrowLeft
 } from 'lucide-react';
-import { SocialIcon } from 'react-social-icons';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { BUMPER_OFFERS, type BumperOffer, CONTACT_INFO } from '../data/websiteData';
 
 export const BumperOffers: React.FC = () => {
@@ -186,7 +186,7 @@ export const BumperOffers: React.FC = () => {
                   onClick={() => handleClaimOffer(offer)}
                   className="w-full py-2.5 px-4 bg-brand-700 hover:bg-brand-800 text-white font-bold rounded-xl text-xs sm:text-sm transition-all shadow-xs flex items-center justify-center space-x-2"
                 >
-                  <SocialIcon network="whatsapp" style={{ width: 18, height: 18 }} />
+                  <WhatsAppIcon className="w-4 h-4 text-emerald-300" />
                   <span>Inquire Package on WhatsApp</span>
                 </button>
 
@@ -270,7 +270,7 @@ export const BumperOffers: React.FC = () => {
                   rel="noreferrer"
                   className="flex-1 sm:flex-initial px-5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold transition-colors inline-flex items-center justify-center space-x-2 shadow-sm"
                 >
-                  <SocialIcon network="whatsapp" style={{ width: 18, height: 18 }} />
+                  <WhatsAppIcon className="w-4 h-4 text-white" />
                   <span>Inquire on WhatsApp</span>
                 </a>
               </div>

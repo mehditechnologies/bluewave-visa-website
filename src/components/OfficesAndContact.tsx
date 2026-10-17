@@ -7,6 +7,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import { SocialIcon } from 'react-social-icons';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { OFFICES, CONTACT_INFO, DESTINATIONS } from '../data/websiteData';
 
 export const OfficesAndContact: React.FC = () => {
@@ -125,7 +126,7 @@ export const OfficesAndContact: React.FC = () => {
                   rel="noreferrer"
                   className="py-2.5 px-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold text-center flex items-center justify-center space-x-2 transition-colors shadow-xs"
                 >
-                  <SocialIcon network="whatsapp" style={{ width: 18, height: 18 }} />
+                  <WhatsAppIcon className="w-4 h-4 text-white" />
                   <span>WhatsApp Office</span>
                 </a>
               </div>
@@ -160,8 +161,8 @@ export const OfficesAndContact: React.FC = () => {
                   rel="noreferrer"
                   className="p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-emerald-500/50 flex items-center space-x-3 transition-colors shadow-2xs group"
                 >
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <SocialIcon network="whatsapp" style={{ height: 38, width: 38 }} />
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 text-[#25D366] flex items-center justify-center flex-shrink-0 group-hover:bg-[#25D366] group-hover:text-white transition-colors">
+                    <WhatsAppIcon className="w-6 h-6" />
                   </div>
                   <div>
                     <div className="font-bold text-slate-900">Direct WhatsApp Helpline</div>
@@ -308,7 +309,7 @@ export const OfficesAndContact: React.FC = () => {
                   type="submit"
                   className="w-full py-3 bg-brand-700 hover:bg-brand-800 text-white font-bold text-sm rounded-xl transition-all shadow-xs flex items-center justify-center space-x-2"
                 >
-                  <SocialIcon network="whatsapp" style={{ width: 22, height: 22 }} />
+                  <WhatsAppIcon className="w-5 h-5 text-emerald-300" />
                   <span>Send Inquiry to Visa Consultant on WhatsApp</span>
                 </button>
 

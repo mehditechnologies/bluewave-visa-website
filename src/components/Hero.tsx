@@ -7,7 +7,7 @@ import {
   Compass,
   Award
 } from 'lucide-react';
-import { SocialIcon } from 'react-social-icons';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { DESTINATIONS, CONTACT_INFO } from '../data/websiteData';
 
 interface HeroProps {
@@ -124,7 +124,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAssessment }) => {
                     onClick={handleQuickInquire}
                     className="w-full py-2.5 px-4 bg-brand-700 hover:bg-brand-800 text-white font-bold rounded-xl text-xs sm:text-sm transition-all shadow-xs flex items-center justify-center space-x-2"
                   >
-                    <SocialIcon network="whatsapp" style={{ width: 20, height: 20 }} />
+                    <WhatsAppIcon className="w-4 h-4 text-emerald-300" />
                     <span>Inquire on WhatsApp</span>
                   </button>
                 </div>

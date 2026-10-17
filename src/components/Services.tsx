@@ -10,7 +10,7 @@ import {
   Sparkles,
   ArrowRight
 } from 'lucide-react';
-import { SocialIcon } from 'react-social-icons';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { SERVICES, CONTACT_INFO } from '../data/websiteData';
 
 interface ServicesProps {
@@ -112,9 +112,9 @@ export const Services: React.FC<ServicesProps> = ({ onOpenAssessment }) => {
               <div className="pt-6 border-t border-slate-200 mt-6">
                 <button
                   onClick={() => handleServiceInquiry(srv.title)}
-                  className="w-full py-2.5 px-4 bg-white hover:bg-brand-700 text-slate-700 hover:text-white font-bold text-xs rounded-xl transition-all border border-slate-200 hover:border-brand-700 flex items-center justify-center space-x-2 shadow-2xs"
+                  className="w-full py-2.5 px-4 bg-white hover:bg-brand-700 text-slate-700 hover:text-white font-bold text-xs rounded-xl transition-all border border-slate-200 hover:border-brand-700 flex items-center justify-center space-x-2 shadow-2xs group"
                 >
-                  <SocialIcon network="whatsapp" style={{ width: 18, height: 18 }} />
+                  <WhatsAppIcon className="w-4 h-4 text-[#25D366] group-hover:text-white transition-colors" />
                   <span>Inquire on WhatsApp</span>
                 </button>
               </div>

@@ -8,6 +8,7 @@ import {
   Mail
 } from 'lucide-react';
 import { SocialIcon } from 'react-social-icons';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { CONTACT_INFO } from '../data/websiteData';
 
 interface NavbarProps {
@@ -150,7 +151,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment }) => {
                 className="px-3 xl:px-3.5 py-2 text-xs font-bold text-white bg-brand-700 hover:bg-brand-800 rounded-xl transition-all shadow-xs flex items-center space-x-2 whitespace-nowrap"
                 title="Chat with Visa Consultant"
               >
-                <SocialIcon network="whatsapp" style={{ height: 18, width: 18 }} />
+                <WhatsAppIcon className="w-4 h-4 text-emerald-300" />
                 <span className="hidden xl:inline font-bold">0322-2271478</span>
                 <span className="xl:hidden font-bold">WhatsApp</span>
               </button>
@@ -160,10 +161,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment }) => {
             <div className="flex lg:hidden items-center space-x-2 flex-shrink-0">
               <button
                 onClick={handleWhatsAppClick}
-                className="p-1.5 text-white bg-brand-700 rounded-xl shadow-xs"
+                className="p-2 text-white bg-brand-700 rounded-xl shadow-xs flex items-center justify-center"
                 aria-label="WhatsApp"
               >
-                <SocialIcon network="whatsapp" style={{ height: 22, width: 22 }} />
+                <WhatsAppIcon className="w-4 h-4 text-emerald-300" />
               </button>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -207,9 +208,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment }) => {
                     setMobileMenuOpen(false);
                     handleWhatsAppClick();
                   }}
-                  className="w-full py-2.5 text-center text-sm font-bold text-white bg-brand-700 rounded-xl flex items-center justify-center space-x-1.5 shadow-xs"
+                  className="w-full py-2.5 text-center text-sm font-bold text-white bg-brand-700 rounded-xl flex items-center justify-center space-x-2 shadow-xs"
                 >
-                  <MessageCircle className="w-4 h-4 text-emerald-300" />
+                  <WhatsAppIcon className="w-4 h-4 text-emerald-300" />
                   <span>WhatsApp: 0322-2271478</span>
                 </button>
               </div>

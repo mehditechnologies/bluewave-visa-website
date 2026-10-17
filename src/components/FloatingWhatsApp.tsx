@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
-import { SocialIcon } from 'react-social-icons';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { CONTACT_INFO } from '../data/websiteData';
 
 export const FloatingWhatsApp: React.FC = () => {
@@ -27,16 +27,16 @@ export const FloatingWhatsApp: React.FC = () => {
         </div>
       )}
 
-      {/* Floating Action Button with Official WhatsApp SocialIcon */}
+      {/* Floating Action Button with Official WhatsApp Icon */}
       <button
         onClick={handleClick}
-        className="group relative flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full shadow-2xl shadow-emerald-600/40 hover:scale-110 transition-all duration-300 ring-4 ring-white overflow-hidden"
+        className="group relative flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full shadow-2xl shadow-emerald-600/40 hover:scale-110 transition-all duration-300 ring-4 ring-white"
         aria-label="Chat on WhatsApp (0322-2271478)"
       >
         <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-rose-500 border-2 border-white flex items-center justify-center text-[9px] font-black z-10">
           1
         </span>
-        <SocialIcon network="whatsapp" style={{ height: 42, width: 42 }} className="pointer-events-none" />
+        <WhatsAppIcon className="w-7 h-7 text-white" />
       </button>
     </div>
   );
