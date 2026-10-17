@@ -99,14 +99,14 @@ export const TeamSection: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Direct WhatsApp Consultation Button */}
+                  {/* Direct WhatsApp Consultation Button - strictly 1 line */}
                   <div className="pt-2">
                     <button
                       onClick={() => handleConsultWith(leader)}
-                      className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-brand-700 hover:bg-brand-800 px-4 py-2.5 rounded-xl transition-all shadow-xs"
+                      className="inline-flex items-center space-x-2 text-xs font-bold text-white bg-brand-700 hover:bg-brand-800 px-4 py-2.5 rounded-xl transition-all shadow-xs whitespace-nowrap flex-nowrap"
                     >
-                      <MessageCircle className="w-3.5 h-3.5 text-emerald-300" />
-                      <span>Direct Advisory on WhatsApp</span>
+                      <MessageCircle className="w-3.5 h-3.5 text-emerald-300 flex-shrink-0" />
+                      <span className="whitespace-nowrap font-bold">Direct Advisory on WhatsApp</span>
                     </button>
                   </div>
                 </div>
@@ -116,58 +116,60 @@ export const TeamSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Consulting Team & Staff Grid */}
-        <div className="mt-20">
-          <div className="text-center mb-10">
+        {/* Consulting Team & Staff Grid - Compact & Proportionate */}
+        <div className="mt-16">
+          <div className="text-center mb-8">
             <span className="text-xs font-extrabold uppercase tracking-widest text-slate-600 bg-slate-100 px-3.5 py-1 rounded-full border border-slate-200">
               Visa Case Officers & Department Specialists
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
             {staff.map((member) => (
               <div
                 key={member.name}
-                className="group bg-white rounded-3xl p-5 border border-slate-200 shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                className="group bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/90 shadow-2xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  {/* Dedicated 4:5 Vertical Portrait - High Definition & Proportional */}
-                  <div className="w-full aspect-[4/5] rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-xs relative mb-4">
-                    {member.image ? (
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover object-center"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex flex-col items-center justify-center bg-brand-50 text-brand-700 font-black text-xl">
-                        <Users className="w-10 h-10 text-brand-600 mb-2" />
-                        <span>{member.name.split(' ').map(n => n[0]).join('')}</span>
-                      </div>
-                    )}
-                    <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/95 backdrop-blur-md text-brand-800 border border-slate-200 shadow-2xs">
-                      {member.department}
-                    </span>
-                  </div>
+                  <div className="flex items-start space-x-3.5">
+                    {/* Compact 4:5 Portrait - Crisp, Sharp, Not Overly Huge */}
+                    <div className="w-20 h-25 sm:w-22 sm:h-27.5 rounded-xl overflow-hidden flex-shrink-0 border border-slate-200 bg-slate-100 shadow-2xs">
+                      {member.image ? (
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover object-center"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex flex-col items-center justify-center bg-brand-50 text-brand-700 font-black text-lg">
+                          <Users className="w-6 h-6 text-brand-600 mb-1" />
+                          <span>{member.name.split(' ').map(n => n[0]).join('')}</span>
+                        </div>
+                      )}
+                    </div>
 
-                  {/* Member Info */}
-                  <div>
-                    <h4 className="text-lg font-extrabold text-slate-900 font-heading">
-                      {member.name}
-                    </h4>
-                    <p className="text-xs font-bold text-brand-700 mt-0.5">
-                      {member.role}
-                    </p>
+                    {/* Member Info */}
+                    <div className="flex-1 min-w-0">
+                      <span className="inline-block px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-100 text-brand-800 border border-slate-200 mb-1">
+                        {member.department}
+                      </span>
+                      <h4 className="text-base font-extrabold text-slate-900 font-heading truncate">
+                        {member.name}
+                      </h4>
+                      <p className="text-xs font-bold text-brand-700 mt-0.5">
+                        {member.role}
+                      </p>
+                    </div>
                   </div>
 
                   {/* Bio */}
-                  <p className="text-xs text-slate-600 mt-2.5 leading-relaxed line-clamp-3">
+                  <p className="text-xs text-slate-600 mt-3 leading-relaxed line-clamp-2">
                     {member.bio}
                   </p>
 
                   {/* Specialties */}
-                  <div className="flex flex-wrap gap-1 mt-3">
+                  <div className="flex flex-wrap gap-1 mt-2.5">
                     {member.specialization.map((s, idx) => (
                       <span key={idx} className="text-[10px] font-semibold bg-slate-50 border border-slate-200 text-slate-600 px-2 py-0.5 rounded">
                         {s}
@@ -176,18 +178,18 @@ export const TeamSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* WhatsApp Action or Support Badge (No inquiry button on Office Assistant) */}
-                <div className="pt-4 border-t border-slate-100 mt-5">
+                {/* WhatsApp Action or Support Badge */}
+                <div className="pt-3.5 border-t border-slate-100 mt-4">
                   {member.canInquire ? (
                     <button
                       onClick={() => handleConsultWith(member)}
-                      className="w-full py-2.5 px-3 bg-slate-50 hover:bg-brand-50 text-slate-800 hover:text-brand-800 font-bold text-xs rounded-xl transition-colors border border-slate-200 flex items-center justify-center space-x-1.5"
+                      className="w-full py-2 px-3 bg-slate-50 hover:bg-brand-50 text-slate-800 hover:text-brand-800 font-bold text-xs rounded-xl transition-colors border border-slate-200 flex items-center justify-center space-x-1.5"
                     >
                       <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
                       <span>Inquiry from {member.name}</span>
                     </button>
                   ) : (
-                    <div className="text-center py-2.5 text-xs text-slate-500 font-semibold bg-slate-50 rounded-xl border border-slate-100 flex items-center justify-center space-x-1">
+                    <div className="text-center py-2 text-xs text-slate-500 font-semibold bg-slate-50 rounded-xl border border-slate-100 flex items-center justify-center space-x-1">
                       <Briefcase className="w-3.5 h-3.5 text-slate-400" />
                       <span>Office Administration & Logistics</span>
                     </div>

@@ -1,11 +1,10 @@
-import React from 'react';
 import { 
   MapPin, 
   Phone, 
   Mail, 
-  MessageCircle, 
   Globe
 } from 'lucide-react';
+import { SocialIcon } from 'react-social-icons';
 import { CONTACT_INFO } from '../data/websiteData';
 
 export const Footer: React.FC = () => {
@@ -41,40 +40,45 @@ export const Footer: React.FC = () => {
               Operating since 2010 with registered offices in Islamabad, Pakistan, and Baku, Azerbaijan. Delivering verified document dossiers, official invitation arrangements, and 98% approval records across 26+ destinations worldwide.
             </p>
 
-            <div className="pt-2 flex items-center space-x-2">
-              <a
-                href={CONTACT_INFO.facebook}
+            {/* Social Media Icons via react-social-icons */}
+            <div className="pt-2 flex items-center space-x-2.5">
+              <SocialIcon
+                url={CONTACT_INFO.facebook}
                 target="_blank"
-                rel="noreferrer"
-                className="px-3 py-1.5 rounded-lg bg-white hover:bg-blue-50 text-slate-700 border border-slate-200 text-xs font-semibold transition-colors shadow-2xs"
-              >
-                Facebook
-              </a>
-              <a
-                href={CONTACT_INFO.instagram}
+                rel="noopener noreferrer"
+                style={{ height: 36, width: 36 }}
+                className="hover:scale-110 transition-transform shadow-2xs rounded-full"
+              />
+              <SocialIcon
+                url={CONTACT_INFO.instagram}
                 target="_blank"
-                rel="noreferrer"
-                className="px-3 py-1.5 rounded-lg bg-white hover:bg-pink-50 text-slate-700 border border-slate-200 text-xs font-semibold transition-colors shadow-2xs"
-              >
-                Instagram
-              </a>
-              <a
-                href={CONTACT_INFO.tiktok}
+                rel="noopener noreferrer"
+                style={{ height: 36, width: 36 }}
+                className="hover:scale-110 transition-transform shadow-2xs rounded-full"
+              />
+              <SocialIcon
+                url={CONTACT_INFO.tiktok}
                 target="_blank"
-                rel="noreferrer"
-                className="px-3 py-1.5 rounded-lg bg-white hover:bg-cyan-50 text-slate-700 border border-slate-200 text-xs font-semibold transition-colors shadow-2xs"
-              >
-                TikTok
-              </a>
-              <a
-                href={`https://wa.me/${CONTACT_INFO.primaryWhatsApp.replace(/\+/g, '')}`}
+                rel="noopener noreferrer"
+                style={{ height: 36, width: 36 }}
+                className="hover:scale-110 transition-transform shadow-2xs rounded-full"
+              />
+              <SocialIcon
+                url={`https://wa.me/${CONTACT_INFO.primaryWhatsApp.replace(/\+/g, '')}`}
+                network="whatsapp"
                 target="_blank"
-                rel="noreferrer"
-                className="px-3 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold flex items-center space-x-1 transition-colors shadow-xs"
-              >
-                <MessageCircle className="w-3.5 h-3.5 text-emerald-300" />
-                <span>WhatsApp</span>
-              </a>
+                rel="noopener noreferrer"
+                style={{ height: 36, width: 36 }}
+                className="hover:scale-110 transition-transform shadow-2xs rounded-full"
+              />
+              <SocialIcon
+                url={`mailto:${CONTACT_INFO.email}`}
+                network="email"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ height: 36, width: 36 }}
+                className="hover:scale-110 transition-transform shadow-2xs rounded-full"
+              />
             </div>
           </div>
 
