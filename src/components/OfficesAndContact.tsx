@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import { 
   MapPin, 
   Phone, 
-  Mail, 
   Clock, 
-  MessageCircle, 
-  Send, 
   Building2, 
   CheckCircle2
 } from 'lucide-react';
+import { SocialIcon } from 'react-social-icons';
 import { OFFICES, CONTACT_INFO, DESTINATIONS } from '../data/websiteData';
 
 export const OfficesAndContact: React.FC = () => {
@@ -103,7 +101,7 @@ export const OfficesAndContact: React.FC = () => {
                   </div>
 
                   <div className="flex items-center space-x-3">
-                    <Mail className="w-5 h-5 text-slate-400 flex-shrink-0" />
+                    <SocialIcon network="email" style={{ height: 20, width: 20 }} />
                     <span>{office.email}</span>
                   </div>
                 </div>
@@ -125,9 +123,9 @@ export const OfficesAndContact: React.FC = () => {
                   href={`https://wa.me/${CONTACT_INFO.primaryWhatsApp.replace(/\+/g, '')}?text=${encodeURIComponent(`Hello! I want to visit the Blue Wave ${office.city} office. Please share directions.`)}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="py-2.5 px-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold text-center flex items-center justify-center space-x-1.5 transition-colors shadow-xs"
+                  className="py-2.5 px-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold text-center flex items-center justify-center space-x-2 transition-colors shadow-xs"
                 >
-                  <MessageCircle className="w-3.5 h-3.5 text-emerald-300" />
+                  <SocialIcon network="whatsapp" style={{ width: 18, height: 18 }} />
                   <span>WhatsApp Office</span>
                 </a>
               </div>
@@ -160,10 +158,10 @@ export const OfficesAndContact: React.FC = () => {
                   href={`https://wa.me/${CONTACT_INFO.primaryWhatsApp.replace(/\+/g, '')}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-emerald-500/50 flex items-center space-x-3 transition-colors shadow-2xs"
+                  className="p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-emerald-500/50 flex items-center space-x-3 transition-colors shadow-2xs group"
                 >
-                  <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
-                    <MessageCircle className="w-5 h-5" />
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <SocialIcon network="whatsapp" style={{ height: 38, width: 38 }} />
                   </div>
                   <div>
                     <div className="font-bold text-slate-900">Direct WhatsApp Helpline</div>
@@ -171,47 +169,55 @@ export const OfficesAndContact: React.FC = () => {
                   </div>
                 </a>
 
-                <div className="p-3.5 rounded-2xl bg-white border border-slate-200 flex items-center space-x-3 shadow-2xs">
-                  <div className="w-9 h-9 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center font-bold">
-                    <Mail className="w-5 h-5" />
+                <a 
+                  href={`mailto:${CONTACT_INFO.email}`}
+                  className="p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-brand-500/50 flex items-center space-x-3 shadow-2xs transition-colors"
+                >
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <SocialIcon network="email" style={{ height: 38, width: 38 }} />
                   </div>
                   <div>
                     <div className="font-bold text-slate-900">Official Correspondence Email</div>
-                    <div className="text-slate-600">{CONTACT_INFO.email}</div>
+                    <div className="text-slate-600 font-medium">{CONTACT_INFO.email}</div>
                   </div>
-                </div>
+                </a>
               </div>
 
-              {/* Social Channels */}
+              {/* Social Channels via react-social-icons */}
               <div className="pt-2">
-                <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block mb-2">
+                <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block mb-2.5">
                   Official Social Channels:
                 </span>
-                <div className="flex items-center space-x-2">
-                  <a
-                    href={CONTACT_INFO.facebook}
+                <div className="flex items-center space-x-3">
+                  <SocialIcon
+                    url={CONTACT_INFO.facebook}
                     target="_blank"
-                    rel="noreferrer"
-                    className="px-3.5 py-1.5 rounded-xl bg-white hover:bg-blue-50 text-slate-700 border border-slate-200 text-xs font-semibold transition-colors"
-                  >
-                    Facebook
-                  </a>
-                  <a
-                    href={CONTACT_INFO.instagram}
+                    rel="noopener noreferrer"
+                    style={{ height: 34, width: 34 }}
+                    className="hover:scale-110 transition-transform shadow-2xs rounded-full"
+                  />
+                  <SocialIcon
+                    url={CONTACT_INFO.instagram}
                     target="_blank"
-                    rel="noreferrer"
-                    className="px-3.5 py-1.5 rounded-xl bg-white hover:bg-pink-50 text-slate-700 border border-slate-200 text-xs font-semibold transition-colors"
-                  >
-                    Instagram
-                  </a>
-                  <a
-                    href={CONTACT_INFO.tiktok}
+                    rel="noopener noreferrer"
+                    style={{ height: 34, width: 34 }}
+                    className="hover:scale-110 transition-transform shadow-2xs rounded-full"
+                  />
+                  <SocialIcon
+                    url={CONTACT_INFO.tiktok}
                     target="_blank"
-                    rel="noreferrer"
-                    className="px-3.5 py-1.5 rounded-xl bg-white hover:bg-cyan-50 text-slate-700 border border-slate-200 text-xs font-semibold transition-colors"
-                  >
-                    TikTok
-                  </a>
+                    rel="noopener noreferrer"
+                    style={{ height: 34, width: 34 }}
+                    className="hover:scale-110 transition-transform shadow-2xs rounded-full"
+                  />
+                  <SocialIcon
+                    url={`https://wa.me/${CONTACT_INFO.primaryWhatsApp.replace(/\+/g, '')}`}
+                    network="whatsapp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ height: 34, width: 34 }}
+                    className="hover:scale-110 transition-transform shadow-2xs rounded-full"
+                  />
                 </div>
               </div>
 
@@ -302,7 +308,7 @@ export const OfficesAndContact: React.FC = () => {
                   type="submit"
                   className="w-full py-3 bg-brand-700 hover:bg-brand-800 text-white font-bold text-sm rounded-xl transition-all shadow-xs flex items-center justify-center space-x-2"
                 >
-                  <Send className="w-4 h-4 text-emerald-300" />
+                  <SocialIcon network="whatsapp" style={{ width: 22, height: 22 }} />
                   <span>Send Inquiry to Visa Consultant on WhatsApp</span>
                 </button>
 

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Check, 
-  MessageCircle, 
   Gift, 
   FileText, 
   X, 
   Briefcase,
   ArrowLeft
 } from 'lucide-react';
+import { SocialIcon } from 'react-social-icons';
 import { BUMPER_OFFERS, type BumperOffer, CONTACT_INFO } from '../data/websiteData';
 
 export const BumperOffers: React.FC = () => {
@@ -186,7 +186,7 @@ export const BumperOffers: React.FC = () => {
                   onClick={() => handleClaimOffer(offer)}
                   className="w-full py-2.5 px-4 bg-brand-700 hover:bg-brand-800 text-white font-bold rounded-xl text-xs sm:text-sm transition-all shadow-xs flex items-center justify-center space-x-2"
                 >
-                  <MessageCircle className="w-4 h-4 text-emerald-300" />
+                  <SocialIcon network="whatsapp" style={{ width: 18, height: 18 }} />
                   <span>Inquire Package on WhatsApp</span>
                 </button>
 
@@ -268,9 +268,9 @@ export const BumperOffers: React.FC = () => {
                   href={`https://wa.me/${CONTACT_INFO.primaryWhatsApp.replace(/\+/g, '')}?text=${encodeURIComponent("Hello! I want to inquire about the promotional offer shown in your official notice.")}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex-1 sm:flex-initial px-5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold transition-colors inline-flex items-center justify-center space-x-1.5 shadow-sm"
+                  className="flex-1 sm:flex-initial px-5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold transition-colors inline-flex items-center justify-center space-x-2 shadow-sm"
                 >
-                  <MessageCircle className="w-4 h-4 text-emerald-100" />
+                  <SocialIcon network="whatsapp" style={{ width: 18, height: 18 }} />
                   <span>Inquire on WhatsApp</span>
                 </a>
               </div>

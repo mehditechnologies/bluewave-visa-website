@@ -7,6 +7,7 @@ import {
   X, 
   Mail
 } from 'lucide-react';
+import { SocialIcon } from 'react-social-icons';
 import { CONTACT_INFO } from '../data/websiteData';
 
 interface NavbarProps {
@@ -51,42 +52,44 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment }) => {
               Islamabad HQ: G-11 Markaz • Baku: Fatali Khan Khoyski
             </span>
             <span className="text-slate-300">|</span>
-            <span className="flex items-center whitespace-nowrap">
-              <Mail className="w-3.5 h-3.5 mr-1 text-brand-700 flex-shrink-0" />
+            <a 
+              href={`mailto:${CONTACT_INFO.email}`} 
+              className="flex items-center text-slate-700 hover:text-brand-700 transition-colors whitespace-nowrap"
+            >
+              <SocialIcon network="email" style={{ height: 18, width: 18, marginRight: 5 }} />
               {CONTACT_INFO.email}
-            </span>
+            </a>
           </div>
 
-          <div className="flex items-center space-x-4 text-[11px] xl:text-xs font-medium text-slate-600">
+          <div className="flex items-center space-x-3 text-[11px] xl:text-xs font-medium text-slate-600">
             <span className="flex items-center text-slate-800 font-semibold whitespace-nowrap">
               <Phone className="w-3.5 h-3.5 mr-1 text-emerald-600 flex-shrink-0" />
               0322-2271478
             </span>
             <span className="text-slate-300">|</span>
-            <a 
-              href={CONTACT_INFO.facebook} 
-              target="_blank" 
-              rel="noreferrer" 
-              className="hover:text-brand-700 transition-colors whitespace-nowrap"
-            >
-              Facebook
-            </a>
-            <a 
-              href={CONTACT_INFO.instagram} 
-              target="_blank" 
-              rel="noreferrer" 
-              className="hover:text-brand-700 transition-colors whitespace-nowrap"
-            >
-              Instagram
-            </a>
-            <a 
-              href={CONTACT_INFO.tiktok} 
-              target="_blank" 
-              rel="noreferrer" 
-              className="hover:text-brand-700 transition-colors whitespace-nowrap"
-            >
-              TikTok
-            </a>
+            <div className="flex items-center space-x-1.5">
+              <SocialIcon 
+                url={CONTACT_INFO.facebook} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={{ height: 20, width: 20 }} 
+                className="hover:scale-110 transition-transform" 
+              />
+              <SocialIcon 
+                url={CONTACT_INFO.instagram} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={{ height: 20, width: 20 }} 
+                className="hover:scale-110 transition-transform" 
+              />
+              <SocialIcon 
+                url={CONTACT_INFO.tiktok} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={{ height: 20, width: 20 }} 
+                className="hover:scale-110 transition-transform" 
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -144,12 +147,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment }) => {
 
               <button
                 onClick={handleWhatsAppClick}
-                className="px-3 xl:px-3.5 py-2 text-xs font-bold text-white bg-brand-700 hover:bg-brand-800 rounded-xl transition-all shadow-xs flex items-center space-x-1.5 whitespace-nowrap"
+                className="px-3 xl:px-3.5 py-2 text-xs font-bold text-white bg-brand-700 hover:bg-brand-800 rounded-xl transition-all shadow-xs flex items-center space-x-2 whitespace-nowrap"
                 title="Chat with Visa Consultant"
               >
-                <MessageCircle className="w-3.5 h-3.5 text-emerald-300 flex-shrink-0" />
-                <span className="hidden xl:inline">0322-2271478</span>
-                <span className="xl:hidden">WhatsApp</span>
+                <SocialIcon network="whatsapp" style={{ height: 18, width: 18 }} />
+                <span className="hidden xl:inline font-bold">0322-2271478</span>
+                <span className="xl:hidden font-bold">WhatsApp</span>
               </button>
             </div>
 
@@ -157,10 +160,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssessment }) => {
             <div className="flex lg:hidden items-center space-x-2 flex-shrink-0">
               <button
                 onClick={handleWhatsAppClick}
-                className="p-2 text-white bg-emerald-700 rounded-xl shadow-xs"
+                className="p-1.5 text-white bg-brand-700 rounded-xl shadow-xs"
                 aria-label="WhatsApp"
               >
-                <MessageCircle className="w-4 h-4" />
+                <SocialIcon network="whatsapp" style={{ height: 22, width: 22 }} />
               </button>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
