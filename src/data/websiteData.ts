@@ -57,7 +57,7 @@ export interface OfficeLocation {
 export const CONTACT_INFO = {
   primaryPhone: '+92 322 2271478',
   primaryWhatsApp: '+923222271478',
-  otherPhones: ['+92 322 2271440', '+92 322 2271278', '+92 322 2271439', '+92 322 2271479'],
+  otherPhones: ['+92 322 2271440', '+92 322 2271278', '+92 322 2271439', '+92 322 2271479', '+92 322 2271433', '+92 322 2271432'],
   email: 'bluewavevisaconsultant@gmail.com',
   website: 'http://www.bluewavevisaconsultant.com',
   facebook: 'https://www.facebook.com/profile.php?id=61591957363466',
@@ -131,7 +131,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     image: '/team/Muhammad Rafay Akmal- Visit Visa Consultant.jpg',
     bio: 'Specialist in tourist visas, invitation-based applications, and Schengen / Canada / New Zealand travel itineraries.',
     specialization: ['Schengen Tourist Visas', 'Canada TRV', 'Custom Travel Itineraries'],
-    phone: '03222271478',
+    phone: '03222271433',
     canInquire: true,
   },
   {
@@ -161,7 +161,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     image: '/team/Rida Kanwal - Visit Visa Consultant.jpeg',
     bio: 'Senior counselor for tourist itineraries, invitation letters, hotel bookings, and European travel dossiers.',
     specialization: ['Tourist & Visit Visas', 'Invitation Processing', 'Travel Itineraries'],
-    phone: '03222271478',
+    phone: '03222271432',
     canInquire: true,
   },
   {
