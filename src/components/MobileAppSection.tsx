@@ -51,7 +51,7 @@ export const MobileAppSection: React.FC = () => {
                     Official Android Client Application
                   </div>
                   <div className="text-sm font-extrabold text-slate-900">
-                    Blue Wave Visa Tracker (v1.0)
+                    Visa Inquire Blue wave (v1.0)
                   </div>
                 </div>
               </div>
